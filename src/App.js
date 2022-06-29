@@ -1,10 +1,11 @@
 import React from 'react'
-import Sessions from './sessions/useeffect/UseEffectFetch';
+import Sessions from './sessions/conditionalRendering/ShortCircuiting'
+import Form from '../src/sessions/components/Form';
 
 const App = () => {
   return (
     <div className='container'>
-        <Sessions/>
+       <Form/>
     </div>
   )
 }
