@@ -1,27 +1,25 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
 
 const Form = () => {
+  const [username, setUserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [people, setpeople] = useState([]);
+  const randomId = Math.trunc(Math.random() * 10000);
 
-    const [username,setUserName] = useState('')
-    const[email,setEmail] = useState('')
-    const [people,setpeople] = useState([]);
-    const randomId = Math.trunc(Math.random() * 10000);
-        
+  const formHandler = (e) => {
+    e.preventDefault();
 
-    const formHandler = (e)=>{
-        e.preventDefault();
-
-        if(username && email){
-            const person = {id:randomId,username:username,email:email}
-            setpeople((people)=>{
-                return[...people,person]
-            })
-            setUserName('')
-            setEmail('')
-        }else{
-            console.log('Inputs Cannot be Empty')
-        }
+    if (username && email) {
+      const person = { id: randomId, username: username, email: email };
+      setpeople((people) => {
+        return [...people, person];
+      });
+      setUserName('');
+      setEmail('');
+    } else {
+      console.log('Inputs Cannot be Empty');
     }
+  };
 
   return (
     <>
@@ -50,7 +48,7 @@ const Form = () => {
       {people.map((person) => {
         const { username, email } = person;
         return (
-          <div key = {randomId} className="item">
+          <div key={randomId} className="item">
             <h4>{username}</h4>
             <h4>{email}</h4>
           </div>
@@ -58,6 +56,6 @@ const Form = () => {
       })}
     </>
   );
-}
+};
 
-export default Form
+export default Form;

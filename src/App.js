@@ -1,11 +1,10 @@
 import React from 'react'
-import Sessions from './sessions/conditionalRendering/ShortCircuiting'
-import Form from '../src/sessions/components/Form';
+import Session from './sessions/usereducer'
 
 const App = () => {
   return (
     <div className='container'>
-       <Form/>
+      <Session />
     </div>
   )
 }
